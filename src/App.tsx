@@ -20,7 +20,7 @@ function App() {
   const intervalRef = useRef<number | null>(null)
 
   useEffect(() => {
-    fetch('/listComments.json')
+    fetch(`${import.meta.env.BASE_URL}listComments.json`)
       .then((res) => res.json())
       .then((data: Comment[]) => {
         const mentionRegex = /@([\w.]+)/g
